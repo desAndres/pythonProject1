@@ -64,12 +64,11 @@ def delete_comment(comment_id):
     return jsonify({'status': 'success', 'message': f'comment {comment_id} deleted'})
 
 #Чтение всех комментариев к определенному посту по twit_id
-# @app.route('/comment/<int:twit_id>', methods=['GET'])
-# def read_comment(comment_id):
-#     comments_for_twit = [comment for comment in comments if comment.comment_id == comment_id]
-#     serialized_comments = [{'comment_id': comment.comment_id, 'body': comment.body, 'author': comment.author, 'twit_id': comment.twit_id} for comment in comments_for_twit]
-#     print(serialized_comments)
-#     return jsonify({'comments': serialized_comments})
+@app.route('/comment/<int:twit_id>', methods=['GET'])
+def read_comment(twit_id):
+    comments_for_twit = [comment for comment in comments if comment.twit_id == twit_id]
+    serialized_comments = [{'comment_id': comment.comment_id, 'body': comment.body, 'author': comment.author, 'twit_id': comment.twit_id} for comment in comments_for_twit]
+    return jsonify({'comments': serialized_comments})
 
 
 
