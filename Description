@@ -1,0 +1,24 @@
+Приложение имеет 3 сущности:
+
+Пользователь - user
+Пост - twit
+Комментарий - user
+
+Пользователь иметь следующие возможности:
+
+1 Создать пост
+    метод POST по URL localhost:5000/twit, BODY (raw/JSON): {"body": "Hello world","author": "@freeman"}
+  читать конкретный пост
+    метод Get по URL localhost:5000/twit/<int:twit_id>
+  изменять конкретный пост
+    метод PUT по URL localhost:5000/twit/<int:twit_id>, BODY (raw/JSON): {"body": "Hello world"} автора не передаем потому что он неизменен.
+  удалять пост
+    метод DELETE по URL localhost:5000/twit/<int:twit_id>
+2 Получить список всех постов
+    метод GET по URL localhost:5000/twit
+3 Добавить комментарий к посту
+    метод POST по URL localhost:5000/comment BODY (raw/JSON): {"body": "good twit","author": "@theman","twit_id":"1"}
+  удалить комментарий к посту
+    метод DELEE по URL localhost:5000/comment/<int:comment_id>
+Просмотреть все комментарии
+    метод GET по URL localhost:5000/comment
