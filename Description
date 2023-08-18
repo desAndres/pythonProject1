@@ -21,7 +21,7 @@
   удалить комментарий к посту
     метод DELETE по URL localhost:5000/twit/<int:twit_id>/comments/<int:comment_id> (Например, localhost:5000/twit/0/comments/0)
 Просмотреть все комментарии к посту
-    метод GET по URL localhost:5000//twit/<int:twit_id>/comments
+    метод GET по URL localhost:5000//twit/<int:twit_id>/comments (Например, localhost:5000/twit/0/comments)
  просмотреть конкретный комментарий
-    метод GET по URL localhost:5000/twit/<int:twit_id>/comments/<int:comment_id>
+    метод GET по URL localhost:5000/twit/<int:twit_id>/comments/<int:comment_id> (Например, localhost:5000/twit/0/comments/0)
 
