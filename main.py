@@ -87,7 +87,7 @@ def read_comments(twit_id):
                                'twit_id': comment.twit_id} for comment in comments_for_twit]
         return jsonify(serialized_comment)
     else:
-         return jsonify({'status': 'error', 'message': f'comment {comment_id} not found'})
+         return jsonify({'status': 'error', 'message': f'comments not found'})
 
 #Read the specific comment
 @app.route('/twit/<int:twit_id>/comments/<int:comment_id>', methods=['GET'])
