@@ -9,16 +9,19 @@
 1 Создать пост
     метод POST по URL localhost:5000/twit, BODY (raw/JSON): {"body": "Hello world","author": "@freeman"}
   читать конкретный пост
-    метод Get по URL localhost:5000/twit/<int:twit_id> (Например, localhost:5000/twit/1)
+    метод Get по URL localhost:5000/twit/<int:twit_id> (Например, localhost:5000/twit/0)
   изменять конкретный пост
-    метод PUT по URL localhost:5000/twit/<int:twit_id>, BODY (raw/JSON): {"body": "Hello world"} автора не передаем потому что он неизменен.
+    метод PUT по URL localhost:5000/twit/<int:twit_id> (Например, localhost:5000/twit/0) BODY (raw/JSON): {"body": "Bye world"} автора не передаем потому что он неизменен.
   удалять пост
     метод DELETE по URL localhost:5000/twit/<int:twit_id> (Например, localhost:5000/twit/0)
 2 Получить список всех постов
     метод GET по URL localhost:5000/twit
 3 Добавить комментарий к посту
-    метод POST по URL localhost:5000/comment BODY (raw/JSON): {"body": "good twit","author": "@theman","twit_id":"1"}
+    метод POST по URL localhost:5000/twit/<int:twit_id>/comments (Например, localhost:5000/twit/0) BODY (raw/JSON): {"body": "good twit","author": "@theman"}
   удалить комментарий к посту
-    метод DELEE по URL localhost:5000/comment/<int:comment_id> (Например, localhost:5000/comment/1)
-Просмотреть все комментарии
-    метод GET по URL localhost:5000/comment
+    метод DELETE по URL localhost:5000/twit/<int:twit_id>/comments/<int:comment_id> (Например, localhost:5000/twit/0/comments/0)
+Просмотреть все комментарии к посту
+    метод GET по URL localhost:5000//twit/<int:twit_id>/comments
+ просмотреть конкретный комментарий
+    метод GET по URL localhost:5000/twit/<int:twit_id>/comments/<int:comment_id>
+
